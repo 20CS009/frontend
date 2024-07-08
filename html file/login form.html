@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            padding: 8px 10px;
+            border: none;
+            font-size: 1.1rem; /* 1em/1rem=16px */
+            font-weight: bold;
+            cursor: pointer;
+
+        }
+        #show {
+            background-color: teal;
+            color: #fff;
+        }
+        .submit
+        {
+            background-color: green;
+            color: #fff;
+        }
+        .reset, .cls
+        {
+            background-color: orangered;
+            color: #fff;
+        }
+        .cls
+        {
+            float: right;
+        }
+        dialog {
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login Dialog</h1>
+    <button id="show">Login Here</button>
+    <dialog id="alert">
+        <button class="cls">Close</button>
+        <div>
+            <h1>User Login</h1>
+            <!-- <p>User Login</p> -->
+            <form action="" method="" autocomplete="" enctype="">
+                <fieldset>
+                    <!-- <legend>Login Form</legend> -->
+        
+                    <label for="user">Enter Username</label>
+                    <input type="text" name="user" id="user" placeholder="Enter Username" pattern="[A-Za-z@$]+" value="" minlength="3" maxlength="10" required  >
+                    <br><br>
+        
+                    <label for="pass">password</label>
+                    <input type="text" name="pass" id="pass" placeholder="Enter password" required>
+                    <br><br>
+        
+                    <input type="submit" value="Login">
+                    <input type="submit" value="Reset">
+                </fieldset>
+        
+            </form>
+            <!-- <div class="btn-group"> -->
+                <!-- <button class="submit">Submit</button> -->
+                <!-- <button class="reset">Login</button> -->
+            <!-- </div> -->
+        </div>
+    </dialog>
+
+    <script>
+        let sh=document.getElementById('show');
+        let cl=document.querySelector('.cls');
+        let al=document.getElementById('alert');
+
+        sh.onclick=function()
+        {
+            al.show();
+        }
+        cl.onclick=function()
+        {
+            cl.close();
+        }
+    </script>
+    
+</body>
+</html>
